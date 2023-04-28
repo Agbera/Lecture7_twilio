@@ -18,7 +18,7 @@ def hello_pubsub(event, context):
     message = client.messages.create(
                               body='Message from twillo pubsub : ' +pubsub_message,
                               from_='+16073262769',
-                              to='+5146642722'
+                              to='+15146642722'
                           )
 
     print(message.sid)
