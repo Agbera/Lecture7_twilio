@@ -1,6 +1,8 @@
 import base64
 import os
 from twilio.rest import Client
+source_Number='+16073262769'
+destination_numbers=['+5146642722','+2348120602849','+2348088320487','+2348034254634','+2347015984468','+2348140313002','+15148946725']
 
 def hello_pubsub(event, context):
     """Triggered from a message on a Cloud Pub/Sub topic.
@@ -17,8 +19,8 @@ def hello_pubsub(event, context):
     
     message = client.messages.create(
                               body='Message from twillo pubsub : ' +pubsub_message,
-                              from_='+16073262769',
-                              to='+15146642722'
+                              from_=source_Number,
+                              to=each_destination_number
                           )
 
     print(message.sid)
